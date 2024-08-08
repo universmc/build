@@ -1,0 +1,11 @@
+Step 1 : iteration sur le fichiers pour la gestion de la connexion satellite et la transmission de données :
+
+1. ctrl.js : Contrôleur de la connexion satellite et de la transmission de données.
+2. loop.js : Boucle de vérification de la connexion satellite et de la transmission de données.
+3. sat.json : Configuration du satellite et des paramètres de connexion.
+4. signal.js : Gestion de la transmission de données et de la qualité de la connexion.
+5. style.css : Feuille de style pour l'interface utilisateur.
+6. index.php : Page d'accueil et de connexion.
+7. request.php : Traitement des requêtes utilisateur.
+8. scan.js : Scan de la qualité de la connexion satellite.
+9. srv.js : Gestion des connexions et des données entrantes/sortantes.

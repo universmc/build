@@ -1,0 +1,10 @@
+Step 2-2 : Configuration :
+
+1. Choisissez un satellite et une planète cible pour l'orbite à 432 Hz.
+2. Calculez la force de gravitation entre la Terre et le satellite en orbite à l'aide de la formule de Newton.
+3. Définissez la fréquence de signal souhaitée à 432 Hz.
+4. Configurez le satellite pour émettre un signal à la fréquence de 432 Hz.
+5. Testez la connexion et ajustez les paramètres si nécessaire.
+6. Surveillez et maintenez la connexion pour garantir des performances optimales.
+
+Step 2-3 : Configuration (terminé) 📡🛰️📶.

@@ -1,0 +1,37 @@
+Bien, passons maintenant à la conception de la base de données pour la gestion des signaux sur la fréquence 432 Hz.
+
+1. Créer une base de données avec une table "Satellites" contenant les champs :
+	* id (clé primaire)
+	* nom (nom unique du satellite, par exemple, Hubble, Voyager, ISS)
+	* latitude
+	* longitude
+	* altitude (hauteur au-dessus du niveau de la mer)
+	* statut (actif/inactif)
+	* date\_mise\_en\_service (date de mise en service)
+	* date\_desactivation (date de désactivation, si inactif)
+	* description (description du satellite)
+	* image (URL de l'image du satellite)
+	* operateur (opérateur du satellite)
+	* pays (pays d'origine)
+2. Créer une table "Signaux" contenant les champs :
+	* id (clé primaire)
+	* satellite (clé étrangère vers la table Satellites)
+	* frequence (fréquence du signal)
+	* bande\_passante (bande passante du signal)
+	* polarisation (polarisation du signal)
+	* puissance (puissance du signal)
+	* date\_debut (date de début de la transmission)
+	* date\_fin (date de fin de la transmission)
+	* description (description du signal)
+	* statut (actif/inactif)
+	* type\_modulation (type de modulation)
+	* type\_antenne (type d'antenne)
+	* gain\_antenne (gain de l'antenne)
+	* angle\_elevation (angle d'élévation)
+	* angle\_azimuth (angle d'azimut)
+	* elevation\_max (élévation maximale)
+	* azimuth\_max (azimut maximal)
+	* elevation\_min (élévation minimale)
+	* azimuth\_min (azimut minimal)
+
+Cette conception de base de données permettra une gestion efficace des signaux sur la fréquence 432 Hz pour les satellites.

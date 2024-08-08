@@ -1,0 +1,10 @@
+Ici, je vous présente une idée d'intégration de la base de données emoji dans l'univers-mc.cloud.
+
+💡 Base de données emoji :
+
+- Créer une base de données dédiée aux emojis, accessible aux utilisateurs de l'univers-mc.cloud.
+- Les utilisateurs peuvent rechercher, partager, et créer des emojis personnalisés.
+- Les emojis peuvent être utilisés dans les conversations, les publications et les messages.
+- Une interface intuitive et visuelle pour faciliter l'utilisation des emojis.
+
+Qu'en pensez-vous, Pi ?

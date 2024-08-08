@@ -1,0 +1,17 @@
+Step 2-2 : Configuration de la fréquence à 432 Hz. La fréquence de 432 Hz est considérée comme un nombre harmonique, qui est censé être plus naturel et agréable pour l'oreille humaine. Cette fréquence est souvent utilisée dans la musique et le son pour créer une expérience d'écoute plus agréable.
+
+Step 2-3 : Configuration de la connexion satellite. Pour recevoir un signal satellite, vous aurez besoin d'un récepteur satellite et d'une antenne parabolique. Le récepteur satellite se connecte à votre appareil (tel qu'un téléviseur ou un ordinateur) et reçoit les signaux du satellite via l'antenne parabolique.
+
+Step 2-4 : Configuration du timestamp Unix. Un timestamp Unix est un compteur de temps qui suit le nombre de secondes écoulées depuis le 1er janvier 1970. Il est utilisé pour stocker et suivre les dates et heures dans les systèmes informatiques.
+
+Step 2-5 : Configuration de la fonction de chargement du signal. La fonction de chargement du signal est utilisée pour indiquer l'état de la connexion satellite. Lorsque le signal est en cours de chargement, l'indicateur de chargement s'affiche pour montrer la progression.
+
+Step 2-6 : Configuration de la fonction de gravité de Newton. La fonction de gravité de Newton est utilisée pour calculer la force de gravitation entre deux objets. Dans ce contexte, il peut être utilisé pour calculer la force de gravitation entre la Terre et un satellite en orbite.
+
+Step 2-7 : Configuration de la fonction de chargement asynchrone. La fonction de chargement asynchrone est utilisée pour charger des données ou des fichiers sans bloquer le thread principal de l'application. Cela peut être utile pour les applications qui doivent traiter des données volumineuses ou des fichiers, sans affecter les performances globales de l'application.
+
+Step 2-8 : Configuration de la fonction de chargement asynchrone pour la fonction de gravité de Newton. Cela peut être utilisé pour charger les données de gravité de Newton de manière asynchrone, ce qui peut aider à améliorer les performances de l'application.
+
+Step 2-9 : Configuration de la fonction de chargement asynchrone pour la fonction de gravité de Newton et la fonction de timestamp Unix. Cela peut être utilisé pour charger les données de gravité de Newton et les données de timestamp Unix de manière asynchrone, ce qui peut aider à améliorer les performances de l'application.
+
+Step 2-10 : Configuration de la fonction de chargement asynchrone pour la fonction de gravité de Newton, la fonction de timestamp Unix et la fonction de chargement du signal. Cela peut être utilisé pour charger les données de gravité de Newton, les données de timestamp Unix et les données de chargement du signal de manière asynchrone, ce qui peut aider à améliorer les performances de l'application.
