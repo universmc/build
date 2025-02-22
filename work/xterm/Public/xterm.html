@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terminal</title>
+  <link rel="stylesheet" href="xterm.css">
+  <script src="xterm.js"></script>
+</head>
+<body>
+  <div id="terminal"></div>
+  <script>
+    const terminal = new Terminal();
+    terminal.open(document.getElementById('terminal'));
+    // ... Logique pour interagir avec le terminal (exécuter des commandes, etc.)
+  </script>
+</body>
+</html>

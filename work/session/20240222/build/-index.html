@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terminal</title>
+  <link rel="stylesheet" href="../../../../node_modules/xterm/css/xterm.css">
+</head>
+<body>
+  <div id="terminal"></div>
+
+  <script src="../../../..//node_modules/xterm/lib/xterm.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const terminal = new Terminal();
+      terminal.open(document.getElementById('terminal'));
+    });
+  </script>
+
+</body>
+</html>
