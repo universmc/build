@@ -1,0 +1,27 @@
+#container {
+    width: 800px;
+    height: 600px;
+    border: 1px solid black; /* Pour visualiser le conteneur */
+    position: relative; /* Pour positionner les éléments par-dessus le SVG */
+  }
+  
+  #plan-svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .grid-line {
+    stroke: #ccc; /* Couleur de la grille */
+    stroke-width: 1px;
+  }
+  
+  .point {
+    fill: red; /* Couleur des points */
+    r: 5; /* Rayon des points */
+  }
+  
+  #controls {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+  }
