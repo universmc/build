@@ -1,0 +1,10 @@
+[
+  {
+    "user": "Bonjour Gemini 😀",
+    "bot": "Bonjour ! 👋  Comment puis-je vous aider aujourd'hui ? 😊\n"
+  },
+  {
+    "user": "test",
+    "bot": "Please tell me what you want me to test! \n\nFor example, you could ask me to:\n\n* **Test my knowledge:** \"What is the capital of France?\"\n* **Test my creativity:** \"Write me a short poem about a robot.\"\n* **Test my ability to follow instructions:** \"List five fruits in alphabetical order.\"\n* **Test my humor:** \"Tell me a joke.\"\n\n\nI'm ready for your challenge! 😊  \n\n"
+  }
+]
