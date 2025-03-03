@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pencil Shader avec Groq IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <button onclick="getPencilShaderExplanation().then(r => iaOutput.innerText = r)">Nouvelle explication</button>
+    <div id="ia-output" class="ia-text"></div>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- Groq SDK -->
+    <script src="https://unpkg.com/groq-sdk@0.15.0/dist/index.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

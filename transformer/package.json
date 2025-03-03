@@ -1,9 +1,11 @@
 {
     "name": "electra",
     "version": "1.0.0",
+    "type": "module",
     "main": "main.js",
     "scripts": {
       "start": "electron .",
+      "test": "node db_prompt.mjs",
       "build": "electron-builder",
       "webpack": "webpack",
       "sc": "sass --watch src/scss/styles.scss src/css/styles.css",

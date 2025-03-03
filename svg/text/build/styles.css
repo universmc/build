@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #1a1a1a;
+  position: relative;
+}
+
+#myCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.markdown-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+.markdown-text h1 {
+  font-size: 2.5em;
+  color: #ff5500;
+}
+.markdown-text strong {
+  color: #00ffaa;
+}
+.markdown-text em {
+  color: #55aaff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

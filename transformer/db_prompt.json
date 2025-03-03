@@ -1,0 +1,62 @@
+[
+    {
+        "topic": "Paysage",
+        "prompt": "Une illustration réaliste d'un paysage montagneux au coucher du soleil, avec des pics enneigés, une forêt de pins dense et un lac réfléchissant les couleurs dorées et roses du ciel",
+        "style": "réaliste",
+        "details": {
+            "visual": "couleurs vibrantes, lumière douce, haute qualité",
+            "resolution": "16:9",
+            "format": "png"
+        }
+    },
+    {
+        "topic": "Carte",
+        "prompt": "Une carte ancienne de style parchemin illustrant un continent imaginaire, avec des bordures ornées, des noms de lieux en calligraphie élégante et des icônes de montagnes et mers",
+        "style": "vintage",
+        "details": {
+            "visual": "tons sépia, texture usée, détails fins",
+            "resolution": "1024x1024",
+            "format": "webp"
+        }
+    },
+    {
+        "topic": "Plan",
+        "prompt": "Un plan architectural détaillé d'une maison moderne, vue en coupe, avec des annotations claires pour les pièces et des lignes nettes",
+        "style": "technique",
+        "details": {
+            "visual": "monochrome, précision géométrique, étiquettes lisibles",
+            "resolution": "16:9",
+            "format": "png"
+        }
+    },
+    {
+        "topic": "Croquis",
+        "prompt": "Un croquis au crayon d'un vieil arbre noueux dans un champ, avec des traits rapides et des ombres légères",
+        "style": "esquisse",
+        "details": {
+            "visual": "noir et blanc, texture rugueuse, effet spontané",
+            "resolution": "1024x1024",
+            "format": "webp"
+        }
+    },
+    {
+        "topic": "Objets",
+        "prompt": "Une illustration d'une collection d'objets steampunk sur une table en bois : une montre à gousset, une lampe à engrenages et un livre relié en cuir",
+        "style": "steampunk",
+        "details": {
+            "visual": "letons cuivrés, reflets métalliques, ambiance chaleureuse",
+            "resolution": "16:9",
+            "format": "png"
+        }
+    },
+    {
+        "topic": "Dimension",
+        "prompt": "Une représentation d'un portail interdimensionnel flottant dans l'espace, avec des distorsions lumineuses et des étoiles tourbillonnantes autour",
+        "style": "science-fiction",
+        "details": {
+            "visual": "couleurs néon, effet de profondeur, énergie vibrante",
+            "resolution": "1024x1024",
+            "format": "webp"
+        }
+    }
+]

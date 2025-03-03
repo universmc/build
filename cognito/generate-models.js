@@ -86,14 +86,32 @@ async function testCompletion() {
     console.error("Erreur testCompletion:", error);
   }
 }
-
 async function MixtralCompletion() {
   try {
-    const result = await completeText("Mixtral", "Écris un poème sur les 12 constellations du zodiac.", { temperature: 0.7 });
+    const result = await completeText("Mixtral", "Écris un poème sur le vent MISTRAL", { temperature: 0.7 });
     console.log("Résultat:\n", result);
   } catch (error) {
     console.error("Erreur testCompletion:", error);
   }
 }
+async function GeminiCompletion() {
+  try {
+    const result = await completeText("gemimi", "Écris un poème sur la constellation GEMINI.", { temperature: 0.7 });
+    console.log("Résultat:\n", result);
+  } catch (error) {
+    console.error("Erreur testCompletion:", error);
+  }
+}
+async function deepSeekCompletion() {
+  try {
+    const result = await completeText("deepseek", "Écris un poème pour un OVNI appeller DEEPSEEK.", { temperature: 0.7 });
+    console.log("Résultat:\n", result);
+  } catch (error) {
+    console.error("Erreur testCompletion:", error);
+  }
+}
+
+deepSeekCompletion();
+GeminiCompletion();
 MixtralCompletion();
 testCompletion();
