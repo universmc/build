@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="streamer">
+    <canvas id="DisplayCanvas" class="display" width="800" height="500"></canvas>
+    <div class="playeur">
+        <button id="stopButton">⏸️</button>
+        <button id="startButton">▶️</button>
+        <canvas id="timelineCanvas" width="600" height="100"></canvas>
+        <canvas id="timeDisplayCanvas" width="200" height="50"></canvas>
+    </div>
+    </div>
+    <script src="build/timecode.js"></script>
+</body>
+</html>

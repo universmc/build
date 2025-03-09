@@ -1,0 +1,26 @@
+[
+    {
+        "niveau": "Éco-Village",
+        "zones": ["Zones Résidentielles", "Zones Agricoles", "Espaces de Conservation", "Espaces Communautaires"]
+    },
+    {
+        "niveau": "Village",
+        "zones": ["Zones Artisanales", "Infrastructures de Base", "Zones Commerciales de Petite Échelle"]
+    },
+        {
+        "niveau": "Ville",
+        "zones": ["Zones Éducatives", "Zones de Santé", "Zones Industrielles Légères", "Zones de Loisirs"]
+    },
+        {
+        "niveau": "Commune",
+        "zones": ["Zones Administratives", "Zones Culturelles", "Infrastructures de Transport Avancées", "Zones Technologiques"]
+    },
+        {
+        "niveau": "Capitale",
+        "zones": ["Zones Gouvernementales", "Quartiers Diplomatiques", "Centres Financiers", "Pôles d'Innovation et de Recherche"]
+    },
+            {
+        "niveau": "Zones Supplémentaires",
+        "zones": ["Zones Touristiques", "Réseaux de Transport et Logistique", "Zones de Développement Durable", "Zones de Services Publics Essentiels"]
+    }
+]

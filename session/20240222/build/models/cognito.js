@@ -9,7 +9,7 @@ const lieu = "Paris";
 console.log(fonctionsCognitives.orientation(date, lieu));
 
 // Utilisation de la fonction mémoire
-fonctionsCognitives.memoire.encoder("nom", "John Doe");
+fonctionsCognitives.memoire.encoder("model", "dir");
 console.log(fonctionsCognitives.memoire.recuperer("nom"));
 
 // Utilisation de la fonction langage

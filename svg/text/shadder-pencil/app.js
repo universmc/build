@@ -1,47 +1,59 @@
-// Configuration Groq
-const Groq = require('groq-sdk');
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY,dangerouslyAllowBrowser: true });
+// Initialisation Three.js
+const canvas = document.getElementById('myCanvas');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-// Fonction pour interroger l’IA
-async function getPencilShaderExplanation() {
-    const chatCompletion = await groq.chat.completions.create({
-        messages: [
-            {
-                role: "system",
-                content: "You are a helpful assistant specialized in WebGL and Three.js shaders. Explain how a pencil shader works in simple terms."
-            },
-            {
-                role: "user",
-                content: "Tell me about pencil shaders."
-            }
-        ],
-        model: "llama3-8b-8192", // Modèle Groq performant
-        temperature: 0.7,
-        max_tokens: 200
-    });
-    return chatCompletion.choices[0].message.content;
+function resizeCanvas() {
+    renderer.setSize(window.innerWidth, window.innerHeight, false);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 }
+resizeCanvas();
 
-// Afficher la réponse de l’IA
-const iaOutput = document.getElementById('ia-output');
-getPencilShaderExplanation().then((response) => {
-    iaOutput.innerText = response;
-}).catch((error) => {
-    console.error('Erreur Groq :', error);
-    iaOutput.innerText = "Erreur lors de la récupération de la réponse.";
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xffffff); // Fond blanc pour effet crayon
+
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 5);
+camera.lookAt(0, 0, 0);
+
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(5, 5, 5);
+scene.add(light);
+
+// Pencil Shader
+const geometry = new THREE.SphereGeometry(2, 16, 16);
+const material = new THREE.ShaderMaterial({
+    vertexShader: `
+        varying vec3 vNormal;
+        varying vec3 vPosition;
+        void main() {
+            vNormal = normal;
+            vPosition = position;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    `,
+    fragmentShader: `
+        precision mediump float;
+        uniform vec3 lightDir;
+        uniform float time;
+        varying vec3 vNormal;
+        varying vec3 vPosition;
+        void main() {
+            float intensity = dot(normalize(lightDir), vNormal);
+            float edge = step(0.9, abs(dot(vNormal, vec3(0.0, 0.0, 1.0))));
+            float hatch = fract(vPosition.y * 10.0 + time);
+            float toon = floor(intensity * 3.0) / 3.0;
+            vec3 color = edge < 0.5 ? vec3(0.0) : vec3(toon * step(0.5, hatch));
+            gl_FragColor = vec4(color, 1.0);
+        }
+    `,
+    uniforms: {
+        lightDir: { value: light.position },
+        time: { value: 0 }
+    }
 });
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
 
-// Animation
-const clock = new THREE.Clock();
-function animate() {
-    requestAnimationFrame(animate);
-    const delta = clock.getDelta();
-    const time = clock.getElapsedTime();
-
-    sphere.rotation.y += 0.02 * delta * 60;
-    sphere.position.z = Math.sin(time) * 2;
-    material.uniforms.time.value = time;
-
-    renderer.render(scene, camera);
-}
-animate();
+window.addEventListener('resize', resizeCanvas);

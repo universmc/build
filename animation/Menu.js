@@ -1,10 +1,10 @@
 const path = require('path');
 const { app, Menu, MenuItem, BrowserWindow } = require('electron');
-// Function to create and load a file into a new BrowserWindow
+// Function to create a new BrowserWindow with default options
 function createWindow(filePath, options = {}) {
   const window = new BrowserWindow({
     width: 987,
-    height: 600,
+    height: 610,
     ...options,
   });
 
@@ -48,6 +48,18 @@ function createMenu() {
         ]
       },
       {
+        label: 'Affichage',
+        submenu: [
+          { label: 'Recharger', role: 'reload' },
+          { label: 'Forcer le rechargement', role: 'forcereload' },
+          { label: 'Outils de développement', role: 'toggledevtools' },
+          { type: 'separator' },
+          { label: 'Zoom +', role: 'zoomin' },
+          { label: 'Zoom -', role: 'zoomout' },
+          { label: 'Réinitialiser le zoom', role: 'resetzoom' }
+        ]
+      },
+      {
         label: 'Models',
         submenu: [
           {
@@ -56,19 +68,19 @@ function createMenu() {
             models:'',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
+              const groqWindow = new BrowserWindow({width: 987,height: 610});
+              groqWindow.loadFile('models/groq/index.html');
             }
           },
           { type: 'separator' },
           {
-            label: '⏐\\ /⏐ Mixtral',
+            label: '⏐M⏐ Mixtral',
             role:'system',
             models:'',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const GeminiWindow = new BrowserWindow({ /* ... */ });
-              GeminiWindow.loadFile('models/gemini.html');
+              const mixtralWindow = new BrowserWindow({width: 987,height: 610});
+              mixtralWindow.loadFile('models/mixtral/index.html');
             }
           },
           { type: 'separator' },
@@ -76,8 +88,11 @@ function createMenu() {
             label: '🐳 DeepSeek',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
+              const deepSeekWindow = new BrowserWindow({
+                width: 987,
+                height: 610
+              });
+               deepSeekWindow.loadFile('models/deepSeek/index.html');
             }
           },
           { type: 'separator' },
@@ -86,37 +101,37 @@ function createMenu() {
             models:'',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
+              const ollamaWindow = new BrowserWindow({
+                width: 987,
+                height: 610
+              });
+               ollamaWindow.loadFile('models/ollama/index.html');
             }
           },
           { type: 'separator' },
           {
-            label: '🐳 DeepSeek',
-            models:'deepseek-r1-distill-llama-70b',
-            click: () => {
-              // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
-            }
-          },
-          { type: 'separator' },
-          {
-            label: 'Qwant',
+            label: '[Ø] Jarvis',
             models:'deepseek-r1-distill-qwen-32b',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
+              const jarvisWindow = new BrowserWindow({
+                width: 987,
+                height: 610
+              });
+               jarvisWindow.loadFile('models/jarvis/index.html');
             }
           },
+          { type: 'separator' },
           {
             label: '🧑‍🎤 Avatars',
             models:'anonymous-7b-ar',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
+              const avatarsWindow = new BrowserWindow({
+                width: 987,
+                height: 610
+              });
+               avatarsWindow.loadFile('models/avatars/index.html');
             }
           },
           { type: 'separator' },
@@ -125,8 +140,11 @@ function createMenu() {
             models:'dall-e-3',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
+              const dall_e_Window = new BrowserWindow({
+                width: 987,
+                height: 610
+              });
+               dall_e_Window.loadFile('models/dall-e-3/index.html');
             }
           },
           { type: 'separator' },
@@ -135,8 +153,11 @@ function createMenu() {
             models:'gpt-4o',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('models/about.html');
+              const gptWindow = new BrowserWindow({
+                width: 987,
+                height: 610
+              });
+               gptWindow.loadFile('models/openai/index.html');
             }
           }
         ]
@@ -262,8 +283,8 @@ function createMenu() {
             label: 'Blog_DevOps',
             click: () => {
                 // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-                const createWindow = new BrowserWindow({ /* ... */ });
-                createWindow.loadFile('public/about.html',{ width: 987, height: 300 });
+                const blog = new BrowserWindow({width: 987,height: 610});
+                blog.loadFile('models/dall-e-3/index.html');
             }
           },
           { type: 'separator' },
@@ -271,8 +292,8 @@ function createMenu() {
             label: 'Kjournal',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('public/about.html');
+              const kjournal = new BrowserWindow({width: 987,height: 610});
+              kjournal.loadFile('models/dall-e-3/index.html');
             }
           },
           { type: 'separator' },
@@ -280,8 +301,8 @@ function createMenu() {
             label: 'FactoryAi',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('public/about.html');
+              const factoryAI = new BrowserWindow({width: 987,height: 610});
+              factoryAI.loadFile('public/FactoryAi/index.html');
             }
           },
           { type: 'separator' },
@@ -289,8 +310,8 @@ function createMenu() {
             label: 'Qi-Store',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('public/about.html');
+              const qi_store = new BrowserWindow({width: 987,height: 610});
+              qi_store.loadFile('public/Qi.store/index.html');
             }
           },
           { type: 'separator' },
@@ -298,8 +319,8 @@ function createMenu() {
             label: 'Home',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('public/about.html');
+              const home = new BrowserWindow({width: 987,height: 610});
+              home.loadFile('public/FactoryAi/index.html');
             }
           },
           { type: 'separator' },
@@ -307,24 +328,13 @@ function createMenu() {
             label: 'Desktop',
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
-              const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('public/about.html');
+              const desktop = new BrowserWindow({width: 987,height: 610});
+              desktop.loadFile('srv/Destop/index.html');
             }
           }
         ]
       },
-      {
-        label: 'Affichage',
-        submenu: [
-          { label: 'Recharger', role: 'reload' },
-          { label: 'Forcer le rechargement', role: 'forcereload' },
-          { label: 'Outils de développement', role: 'toggledevtools' },
-          { type: 'separator' },
-          { label: 'Zoom +', role: 'zoomin' },
-          { label: 'Zoom -', role: 'zoomout' },
-          { label: 'Réinitialiser le zoom', role: 'resetzoom' }
-        ]
-      },
+
       {
         label: 'Wallet',
         submenu: [
@@ -395,7 +405,7 @@ function createMenu() {
             click: () => {
               // Affichez une boîte de dialogue ou une fenêtre avec les informations "À propos"
               const aboutWindow = new BrowserWindow({ /* ... */ });
-              aboutWindow.loadFile('about.html');
+              aboutWindow.loadFile('terminal.html');
             }
           },
           {

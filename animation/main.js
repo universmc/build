@@ -1,8 +1,12 @@
 require('dotenv').config(); // Charger les variables d'environnement depuis .env
-const { app, BrowserWindow, ipcMain } = require('electron');
-const path = require('path');// Importez la fonction de création du menu
+const { app, Menu, MenuItem,ipcMain, BrowserWindow, shell } = require('electron'); 
+const path = require('path');
+const { createMenu } = require('./Menu.js'); // Importez la fonction de création du menu
 const express = require('express');
+const { generateResponse, makeResponse } = require('./groq-utils.js');
 const electronReload = require('electron-reload');
+const Cluster = require('./heavy.js');
+const { spawn } = require('child_process'); // Pour exécuter des commandes
 
 if (process.env.NODE_ENV === 'development') {
     electronReload(__dirname);
@@ -10,6 +14,9 @@ if (process.env.NODE_ENV === 'development') {
 
 const server = express();
 server.use(express.json());
+
+server.post('/generate', generateResponse);
+server.post('/make', makeResponse);
 
 server.listen(5001, () => {
     console.log('Serveur Express démarré sur http://localhost:5001');
@@ -20,12 +27,17 @@ function createWindow() {
         width: 987,
         height: 610,
         webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
             contextIsolation: true,
             enableRemoteModule: false,
         },
     });
 
     win.loadFile('index.html');
+    createMenu(); // Appelez la fonction pour créer le menu
+    if (process.env.NODE_ENV === 'development') {
+        win.webContents.openDevTools();
+    }
 }
 
 app.whenReady().then(createWindow);
